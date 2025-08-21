@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <p>Total de vagas abertas: {{ vagas_abertas }}</p>
+    <p>Total de vagas fechadas: {{ vagas_fechadas }}</p>
+    <p>Setor com mais vagas abertas: {{ setor_mais_vagas }}</p>
+    <p>Média de idade dos candidatos: {{ media_idade }}</p>
+
+    <h3>Número de candidatos por vaga</h3>
+    <ul>
+      {% for vaga_id, qtd in num_candidatos_vaga.items %}
+        <li>Vaga {{ vaga_id }}: {{ qtd }} candidatos</li>
+      {% empty %}
+        <li>Nenhuma candidatura registrada ainda.</li>
+      {% endfor %}
+    </ul>
+</body>
+</html>
